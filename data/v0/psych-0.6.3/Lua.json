@@ -1,0 +1,33 @@
+{
+    "events": {
+        "onCreate": {
+            "description": "Called once the script was initialized."
+        },
+        "onCreatePost": {
+            "description": "Called once the game has finished loading."
+        },
+        "onUpdate": {
+            "description": "Called every frame before any logic updates.",
+            "args": {"delta": "number"}
+        }
+    },
+    "variables": {
+        "playbackRate": "number",
+        "defaultPlayerStrum": "number",
+        "defaultOpponentStrum": "number",
+        "startedCountdown": "boolean",
+        "songLength": "number"
+    },
+    "functions": {
+        "makeLuaSprite": {
+            "description": "Makes a sprite with the given tag, image and position.\nIf sprite with that tag already exists, it gets replaced.\nImage path starts at the \"images/\" folder. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
+            "args": {"tag": "string", "imagePath": "string = ''", "x": "number = 0", "y": "number = 0"},
+            "returnValue": null,
+            "example": "makeLuaSprite('newgrounds logo', 'newgrounds_logo', 459, 185)"
+        }
+    },
+    "snippets": {
+        "For-Notes Loop": "for i = 0, getProperty('notes.length')-1 do\n\nend",
+        "For-UnspawnNotes Loop": "for i = 0, getProperty('unspawnNotes.length')-1 do\n\nend"
+    }
+}
