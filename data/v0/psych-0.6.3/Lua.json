@@ -12,17 +12,91 @@
         }
     },
     "variables": {
-        "playbackRate": "number",
-        "defaultPlayerStrum": "number",
-        "defaultOpponentStrum": "number",
-        "startedCountdown": "boolean",
-        "songLength": "number"
+        "defaultPlayerStrumX0": {
+            "type": "number",
+            "description": "Default horizontal position of the player's left note."
+        },
+        "defaultPlayerStrumX1": {
+            "type": "number",
+            "description": "Default horizontal position of the player's down note."
+        },
+        "defaultPlayerStrumX2": {
+            "type": "number",
+            "description": "Default horizontal position of the player's up note."
+        },
+        "defaultPlayerStrumX3": {
+            "type": "number",
+            "description": "Default horizontal position of the player's right note."
+        },
+        "defaultPlayerStrumY0": {
+            "type": "number",
+            "description": "Default vertical position of the player's left note."
+        },
+        "defaultPlayerStrumY1": {
+            "type": "number",
+            "description": "Default vertical position of the player's down note."
+        },
+        "defaultPlayerStrumY2": {
+            "type": "number",
+            "description": "Default vertical position of the player's up note."
+        },
+        "defaultPlayerStrumY3": {
+            "type": "number",
+            "description": "Default vertical position of the player's right note."
+        },
+        "defaultOpponentStrumX0": {
+            "type": "number",
+            "description": "Default horizontal position of the opponent's left note."
+        },
+        "defaultOpponentStrumX1": {
+            "type": "number",
+            "description": "Default horizontal position of the opponent's down note."
+        },
+        "defaultOpponentStrumX2": {
+            "type": "number",
+            "description": "Default horizontal position of the opponent's up note."
+        },
+        "defaultOpponentStrumX3": {
+            "type": "number",
+            "description": "Default horizontal position of the opponent's right note."
+        },
+        "defaultOpponentStrumY0": {
+            "type": "number",
+            "description": "Default vertical position of the opponent's left note."
+        },
+        "defaultOpponentStrumY1": {
+            "type": "number",
+            "description": "Default vertical position of the opponent's down note."
+        },
+        "defaultOpponentStrumY2": {
+            "type": "number",
+            "description": "Default vertical position of the opponent's up note."
+        },
+        "defaultOpponentStrumY3": {
+            "type": "number",
+            "description": "Default vertical position of the opponent's right note."
+        },
+        "startedCountdown": {
+            "type": "number"
+        },
+        "songLength": {
+            "type": "number",
+            "description": "Song's length."
+        },
+        "playbackRate": {
+            "type": "number",
+            "description": "The current playback speed of the song."
+        }
     },
     "functions": {
+        "getSongPosition": {
+            "description": "Returns the current song position.",
+            "returnValue": "number"
+        },
         "makeLuaSprite": {
             "description": "Makes a sprite with the given tag, image and position.\nIf sprite with that tag already exists, it gets replaced.\nImage path starts at the \"images/\" folder. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
-            "args": {"tag": "string", "imagePath": "string = ''", "x": "number = 0", "y": "number = 0"},
-            "returnValue": null,
+            "argTypes": {"tag": "string", "imagePath": "string = ''", "x": "number = 0", "y": "number = 0"},
+            "returnValue": "nothing",
             "example": "makeLuaSprite('newgrounds logo', 'newgrounds_logo', 459, 185)"
         }
     },
