@@ -19,16 +19,199 @@
             "description": "Called every section, use `curSection` to get the section index."
         },
         "onUpdate": {
-            "description": "Called every frame before any logic updates.  \n`elapsed` - the time between frames.",
-            "args": {"elapsed": "number"}
+            "description": "Called every frame before any logic updates.\n`elapsed` - the time between frames in seconds.",
+            "args": {
+                "elapsed": "number"
+            }
         },
         "onUpdatePost": {
-            "description": "Called every frame after all logic updated.  \n`elapsed` - the time between frames.",
-            "args": {"elapsed": "number"}
+            "description": "Called every frame after all logic updated.\n`elapsed` - the time between frames in seconds.",
+            "args": {
+                "elapsed": "number"
+            }
         },
         "onUpdateScore": {
-            "description": "Called every time score text updates.",
-            "args": {"missed": "boolean"}
+            "description": "Triggered every time score text updates.",
+            "args": {
+                "missed": "boolean"
+            }
+        },
+        "onSongStart": {
+            "description": "Triggered once the song starts playing."
+        },
+        "onEndSong": {
+            "description": "Triggered once the song ends."
+        },
+        "onMoveCamera": {
+            "description": "Called whenever camera tries to change focus.\n`focus` - character it focuses on, can be either `boyfriend`, `dad` or `gf`.",
+            "args": {
+                "focus": "string"
+            }
+        },
+        "onRecalculateRating": {
+            "description": "Called right before the rating calculation.\n`return Function_Stop` prevents it from being calculated."
+        },
+        "onEvent": {
+            "description": "Fires every event hit.",
+            "args": {
+                "eventName": "string",
+                "value1": "string",
+                "value2": "string"
+            }
+        },
+        "onStartCountdown": {
+            "description": "Triggered before the countdown starts."
+        },
+        "onCountdownStarted": {
+            "description": "Triggered after the countdown started."
+        },
+        "onCountdownTick": {
+            "description": "Fires every countdown tick.\n`counter` - number value between 0 and 4.\n` 0 ` - \"Three\". ` 1 ` - \"Two / Ready?\".\n` 2 ` - \"One / Set\". ` 3 ` - \"Three / GO!\".\n` 4 ` - Song started.\n",
+            "args": {
+                "counter": "number"
+            }
+        },
+        "onNextDialogue": {
+            "description": "Triggered when the next dialogue is called.",
+            "args": {
+                "dialogueCount": "number"
+            }
+        },
+        "onSkipDialogue": {
+            "description": "Triggered when the dialogue is skipped mid text.",
+            "args": {
+                "dialogueCount": "number"
+            }
+        },
+        "onPause": {
+            "description": "Called when the gameplay pauses."
+        },
+        "onResume": {
+            "description": "Called when the gameplay resumes."
+        },
+        "onGameOver": {
+            "description": "Triggered before Game Over initialized.\n`return Function_Stop` can be used to prevent it."
+        },
+        "onGameOverStart": {
+            "description": "Triggered after Game Over screen was created."
+        },
+        "onGameOverConfirm": {
+            "description": "Triggered if player decides to retry or return to the menu.",
+            "args": {
+                "retry": "boolean"
+            }
+        },
+        "onCustomSubstateCreate": {
+            "description": "Same as onCreate() but for substates.\n`name` - the name that was given to the substate using `openCustomSubstate(name)`.",
+            "args": {
+                "name": "string"
+            }
+        },
+        "onCustomSubstateCreatePost": {
+            "description": "Same as onCustomSubstateCreate.",
+            "args": {
+                "name": "string"
+            }
+        },
+        "onCustomSubstateUpdate": {
+            "description": "Same as onUpdate() but for substates.\n`name` - the substate name.\n`elapsed` - the time between frames in seconds.",
+            "args": {
+                "name": "string",
+                "elapsed": "number"
+            }
+        },
+        "onCustomSubstateUpdatePost": {
+            "description": "Same as onCustomSubstateUpdate.",
+            "args": {
+                "name": "string",
+                "elapsed": "number"
+            }
+        },
+        "onCustomSubstateDestroy": {
+            "description": "Triggered when substate closes.\n`name` - the name of the substate that is being closed.",
+            "args": {
+                "name": "string"
+            }
+        },
+        "goodNoteHit": {
+            "description": "Called when player hits a note.\n`index` - the note's id in unspawnNotes group.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if its a note's tail part.",
+            "args": {
+                "index": "number",
+                "noteDir": "number",
+                "noteType": "string",
+                "isSustainNote": "boolean"
+            }
+        },
+        "opponentNoteHit": {
+            "description": "Called when opponent hits a note.\n`index` - the note's id.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if its a note's tail part.",
+            "args": {
+                "index": "number",
+                "noteDir": "number",
+                "noteType": "string",
+                "isSustainNote": "boolean"
+            }
+        },
+        "onSpawnNote": {
+            "description": "Called when a note is spawned.\n`index` - the note's id.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if its a note's tail part.",
+            "args": {
+                "index": "number",
+                "noteDir": "number",
+                "noteType": "string",
+                "isSustainNote": "boolean"
+            }
+        },
+        "noteMiss": {
+            "description": "Called when player misses a note.\n`index` - the note's id.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if it was a note's tail part.",
+            "args": {
+                "index": "number",
+                "noteDir": "number",
+                "noteType": "string",
+                "isSustainNote": "boolean"
+            }
+        },
+        "noteMissPress": {
+            "description": "Called when player misses by tapping while ghost tapping is off.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.",
+            "args": {
+                "noteDir": "number"
+            }
+        },
+        "onKeyPress": {
+            "description": "Called when player hits a key.\n`key` - corresponds to the note's direction,\n0: left, 1: down, 2: up, 3: right.",
+            "args": {
+                "key": "number"
+            }
+        },
+        "onKeyRelease": {
+            "description": "Called when player releases a key.\n`key` - corresponds to the note's direction,\n0: left, 1: down, 2: up, 3: right.",
+            "args": {
+                "key": "number"
+            }
+        },
+        "onGhostTap": {
+            "description": "Called when player ghost-taps a key.\n`key` - corresponds to the note's direction,\n0: left, 1: down, 2: up, 3: right.",
+            "args": {
+                "key": "number"
+            }
+        },
+        "onTimerCompleted": {
+            "description": "Triggered on timer completion.\n`tag` - the tag that was given to the timer.\n`loops` - the amount of loops it have went through.\n`loopsLeft` - the amount of loops left.",
+            "args": {
+                "tag": "string",
+                "loops": "string",
+                "loopsLeft": "string"
+            }
+        },
+        "onTweenCompleted": {
+            "description": "Triggered once any tween completes.\n`tag` - the tag that was given to the tween.",
+            "args": {
+                "tag": "string"
+            }
+        },
+        "onSoundFinished": {
+            "description": "Triggered once any sound finishes.\n`tag` - the tag that was given to the sound.",
+            "args": {
+                "tag": "string"
+            }
         }
     },
     "variables": {
@@ -113,14 +296,23 @@
             "description": "Returns the current song position in milliseconds."
         },
         "makeLuaSprite": {
-            "description": "Makes a sprite with the given tag, image and position.  \nIf sprite with that tag already exists, it gets replaced.  \nImage path starts at the \"images/\" folder. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
-            "argTypes": {"tag": "string", "imagePath": "string = ''", "x": "number = 0", "y": "number = 0"},
-            "returnValue": "nothing",
+            "description": "Makes a sprite with the given tag, image and position.\nIf sprite with that tag already exists, it gets replaced.\n`image` - path to the image like `bg-stuff/goober`. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
+            "argTypes": {
+                "tag": "string",
+                "image": "string = ''",
+                "x": "number = 0",
+                "y": "number = 0"
+            },
+            "returnValue": "nil",
             "example": "makeLuaSprite('newgrounds logo', 'newgrounds_logo', 459, 185)"
         }
     },
     "snippets": {
         "For-Notes Loop": "for i = 0, getProperty('notes.length') - 1 do\n\t$0\nend",
-        "For-UnspawnNotes Loop": "for i = 0, getProperty('unspawnNotes.length') - 1 do\n\t$0\nend"
+        "For-UnspawnNotes Loop": "for i = 0, getProperty('unspawnNotes.length') - 1 do\n\t$0\nend",
+        "Skip Notes Fade": "setProperty('skipArrowStartTween', true)",
+        "Skip Countdown": "setProperty('skipCountdown', true)",
+        "Disable Auto-Pause": "setPropertyFromClass('flixel.FlxG', 'autoPause', false) -- Don't forget to turn it back on with onDestroy callback",
+        "function lerp(start, end, time)": "function lerp(s, e, t)\n\treturn s + (e - s) * math.min(t, 1)\nend"
     }
 }
