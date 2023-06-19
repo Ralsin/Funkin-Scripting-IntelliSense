@@ -20,19 +20,19 @@
         },
         "onUpdate": {
             "description": "Called every frame before any logic updates.\n`elapsed` - the time between frames in seconds.",
-            "args": {
+            "argTypes": {
                 "elapsed": "number"
             }
         },
         "onUpdatePost": {
             "description": "Called every frame after all logic updated.\n`elapsed` - the time between frames in seconds.",
-            "args": {
+            "argTypes": {
                 "elapsed": "number"
             }
         },
         "onUpdateScore": {
             "description": "Triggered every time score text updates.",
-            "args": {
+            "argTypes": {
                 "missed": "boolean"
             }
         },
@@ -44,7 +44,7 @@
         },
         "onMoveCamera": {
             "description": "Called whenever camera tries to change focus.\n`focus` - character it focuses on, can be either `boyfriend`, `dad` or `gf`.",
-            "args": {
+            "argTypes": {
                 "focus": "string"
             }
         },
@@ -53,7 +53,7 @@
         },
         "onEvent": {
             "description": "Fires every event hit.",
-            "args": {
+            "argTypes": {
                 "eventName": "string",
                 "value1": "string",
                 "value2": "string"
@@ -67,19 +67,19 @@
         },
         "onCountdownTick": {
             "description": "Fires every countdown tick.\n`counter` - number value between 0 and 4.\n` 0 ` - \"Three\". ` 1 ` - \"Two / Ready?\".\n` 2 ` - \"One / Set\". ` 3 ` - \"Three / GO!\".\n` 4 ` - Song started.\n",
-            "args": {
+            "argTypes": {
                 "counter": "number"
             }
         },
         "onNextDialogue": {
             "description": "Triggered when the next dialogue is called.",
-            "args": {
+            "argTypes": {
                 "dialogueCount": "number"
             }
         },
         "onSkipDialogue": {
             "description": "Triggered when the dialogue is skipped mid text.",
-            "args": {
+            "argTypes": {
                 "dialogueCount": "number"
             }
         },
@@ -97,45 +97,45 @@
         },
         "onGameOverConfirm": {
             "description": "Triggered if player decides to retry or return to the menu.",
-            "args": {
+            "argTypes": {
                 "retry": "boolean"
             }
         },
         "onCustomSubstateCreate": {
             "description": "Same as onCreate() but for substates.\n`name` - the name that was given to the substate using `openCustomSubstate(name)`.",
-            "args": {
+            "argTypes": {
                 "name": "string"
             }
         },
         "onCustomSubstateCreatePost": {
             "description": "Same as onCustomSubstateCreate.",
-            "args": {
+            "argTypes": {
                 "name": "string"
             }
         },
         "onCustomSubstateUpdate": {
             "description": "Same as onUpdate() but for substates.\n`name` - the substate name.\n`elapsed` - the time between frames in seconds.",
-            "args": {
+            "argTypes": {
                 "name": "string",
                 "elapsed": "number"
             }
         },
         "onCustomSubstateUpdatePost": {
             "description": "Same as onCustomSubstateUpdate.",
-            "args": {
+            "argTypes": {
                 "name": "string",
                 "elapsed": "number"
             }
         },
         "onCustomSubstateDestroy": {
             "description": "Triggered when substate closes.\n`name` - the name of the substate that is being closed.",
-            "args": {
+            "argTypes": {
                 "name": "string"
             }
         },
         "goodNoteHit": {
             "description": "Called when player hits a note.\n`index` - the note's id in unspawnNotes group.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if its a note's tail part.",
-            "args": {
+            "argTypes": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -144,7 +144,7 @@
         },
         "opponentNoteHit": {
             "description": "Called when opponent hits a note.\n`index` - the note's id.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if its a note's tail part.",
-            "args": {
+            "argTypes": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -153,7 +153,7 @@
         },
         "onSpawnNote": {
             "description": "Called when a note is spawned.\n`index` - the note's id.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if its a note's tail part.",
-            "args": {
+            "argTypes": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -162,7 +162,7 @@
         },
         "noteMiss": {
             "description": "Called when player misses a note.\n`index` - the note's id.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.\n`noteType` - type of the custom note.\n`isSustainNote` - true if it was a note's tail part.",
-            "args": {
+            "argTypes": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -171,31 +171,31 @@
         },
         "noteMissPress": {
             "description": "Called when player misses by tapping while ghost tapping is off.\n`noteDir` - 0: left, 1: down, 2: up, 3: right.",
-            "args": {
+            "argTypes": {
                 "noteDir": "number"
             }
         },
         "onKeyPress": {
             "description": "Called when player hits a key.\n`key` - corresponds to the note's direction,\n0: left, 1: down, 2: up, 3: right.",
-            "args": {
+            "argTypes": {
                 "key": "number"
             }
         },
         "onKeyRelease": {
             "description": "Called when player releases a key.\n`key` - corresponds to the note's direction,\n0: left, 1: down, 2: up, 3: right.",
-            "args": {
+            "argTypes": {
                 "key": "number"
             }
         },
         "onGhostTap": {
             "description": "Called when player ghost-taps a key.\n`key` - corresponds to the note's direction,\n0: left, 1: down, 2: up, 3: right.",
-            "args": {
+            "argTypes": {
                 "key": "number"
             }
         },
         "onTimerCompleted": {
             "description": "Triggered on timer completion.\n`tag` - the tag that was given to the timer.\n`loops` - the amount of loops it have went through.\n`loopsLeft` - the amount of loops left.",
-            "args": {
+            "argTypes": {
                 "tag": "string",
                 "loops": "string",
                 "loopsLeft": "string"
@@ -203,13 +203,13 @@
         },
         "onTweenCompleted": {
             "description": "Triggered once any tween completes.\n`tag` - the tag that was given to the tween.",
-            "args": {
+            "argTypes": {
                 "tag": "string"
             }
         },
         "onSoundFinished": {
             "description": "Triggered once any sound finishes.\n`tag` - the tag that was given to the sound.",
-            "args": {
+            "argTypes": {
                 "tag": "string"
             }
         }
@@ -292,6 +292,10 @@
         }
     },
     "functions": {
+        "addAnimation": {
+            "description": "",
+            "argTypes": {"tag": "string", "name": "string", "frames": "{number}", "framerate": "number = 24", "loop": "bool = true"}
+        },
         "getSongPosition": {
             "description": "Returns the current song position in milliseconds."
         },
