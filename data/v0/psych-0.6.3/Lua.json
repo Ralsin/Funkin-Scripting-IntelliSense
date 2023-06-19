@@ -19,13 +19,13 @@
             "description": "Called every section, use `curSection` to get the section index."
         },
         "onUpdate": {
-            "description": "Called every frame before any logic updates.\n`elapsed` - the time between frames in seconds.",
+            "description": "Called every frame before any logic updates.  \n`elapsed` - the time between frames in seconds.",
             "argTypes": {
                 "elapsed": "number"
             }
         },
         "onUpdatePost": {
-            "description": "Called every frame after all logic updated.\n`elapsed` - the time between frames in seconds.",
+            "description": "Called every frame after all logic updated.  \n`elapsed` - the time between frames in seconds.",
             "argTypes": {
                 "elapsed": "number"
             }
@@ -43,13 +43,13 @@
             "description": "Triggered once the song ends."
         },
         "onMoveCamera": {
-            "description": "Called whenever camera tries to change focus.\n`focus` - character it focuses on, can be either `boyfriend`, `dad` or `gf`.",
+            "description": "Called whenever camera tries to change focus.  \n`focus` - character it focuses on, can be either `boyfriend`, `dad` or `gf`.",
             "argTypes": {
                 "focus": "string"
             }
         },
         "onRecalculateRating": {
-            "description": "Called right before the rating calculation.\n`return Function_Stop` prevents it from being calculated."
+            "description": "Called right before the rating calculation.  \n`return Function_Stop` prevents it from being calculated."
         },
         "onEvent": {
             "description": "Fires every event hit.",
