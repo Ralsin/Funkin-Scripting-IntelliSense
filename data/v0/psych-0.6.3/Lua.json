@@ -66,7 +66,7 @@
             "description": "Triggered after the countdown started."
         },
         "onCountdownTick": {
-            "description": "Fires every countdown tick.  \n`counter` - number value between 0 and 4.  \n` 0 ` - \"Three\". ` 1 ` - \"Two / Ready?\".  \n` 2 ` - \"One / Set\". ` 3 ` - \"Three / GO!\".  \n` 4 ` - Song started.\n",
+            "description": "Fires every countdown tick.  \n`counter` - number value between 0 and 4.  \n` 0 ` - \"Three\". ` 1 ` - \"Two / Ready?\".  \n` 2 ` - \"One / Set\". ` 3 ` - \"Three / GO!\".  \n` 4 ` - Song started.",
             "argTypes": {
                 "counter": "number"
             }
@@ -194,7 +194,7 @@
             }
         },
         "onTimerCompleted": {
-            "description": "Triggered on timer completion.  \n`tag` - the tag that was given to the timer.  \n`loops` - the amount of loops it have went through.\n`loopsLeft` - the amount of loops left.",
+            "description": "Triggered on timer completion.  \n`tag` - the tag that was given to the timer.  \n`loops` - the amount of loops it have went through.  \n`loopsLeft` - the amount of loops left.",
             "argTypes": {
                 "tag": "string",
                 "loops": "string",
@@ -292,6 +292,167 @@
         }
     },
     "functions": {
+        "addAnimation": {
+            "description": "",
+            "argTypes": {
+                "tag": "string",
+                "name": "string",
+                "frames": "{number}",
+                "framerate": "number = 24",
+                "loop": "bool = true"
+            }
+        },
+        "addAnimationByIndices": {
+            "description": "",
+            "argTypes": {
+                "tag": "string",
+                "name": "string",
+                "prefix": "string",
+                "indices": "string",
+                "framerate": "number = 24"
+            }
+        },
+        "addAnimationByIndicesLoop": {
+            "description": "",
+            "argTypes": {
+                "tag": "string",
+                "name": "string",
+                "prefix": "string",
+                "indices": "string",
+                "framerate": "number = 24"
+            }
+        },
+        "addAnimationByPrefix": {
+            "description": "",
+            "argTypes": {
+                "tag": "string",
+                "name": "string",
+                "prefix": "string",
+                "framerate": "number = 24",
+                "loop": "boolean = true"
+            }
+        },
+        "addCharacterToList": {
+            "description": "",
+            "argTypes": {
+                "name": "string",
+                "type": "string"
+            }
+        },
+        "addHaxeLibrary": {
+            "description": "",
+            "argTypes": {
+                "libName": "string",
+                "?libPackage": "string = ''"
+            }
+        },
+        "addHealth": {
+            "description": "",
+            "argTypes": {
+                "value": "number"
+            }
+        },
+        "addHits": {
+            "description": "Adds hits and recalculates the rating.",
+            "argTypes": {
+                "value": "string"
+            }
+        },
+        "addLuaScript": {
+            "description": "",
+            "argTypes": {
+                "luaFile": "string",
+                "?ignoreAlreadyRunning": "boolean = false"
+            }
+        },
+        "addLuaSprite": {
+            "description": "",
+            "argTypes": {
+                "tag": "string",
+                "?front": "boolean = false"
+            }
+        },
+        "addLuaText": {
+            "description": "",
+            "argTypes": {
+                "tag": "string"
+            }
+        },
+        "addMisses": {
+            "description": "Adds misses and recalculates the rating.",
+            "argTypes": {
+                "value": "number"
+            }
+        },
+        "addOffset": {
+            "description": "Adds offset to the sprite's animation. `tag` - the sprite's name to add offset to.",
+            "argTypes": {
+                "tag": "string",
+                "anim": "string",
+                "x": "number",
+                "y": "number"
+            }
+        },
+        "addScore": {
+            "description": "Adds score and recalculates the rating.",
+            "argTypes": {
+                "value": "string"
+            }
+        },
+        "anyGamepadJustPressed": {
+            "description": "Checks if the gamepad's button just got pressed.",
+            "argTypes": {
+                "button": "string"
+            }
+        },
+        "anyGamepadPressed": {
+            "description": "Checks if the gamepad's button is held.",
+            "argTypes": {
+                "button": "string"
+            }
+        },
+        "anyGamepadReleased": {
+            "description": "Checks if the gamepad's button just got released.",
+            "argTypes": {
+                "button": "string"
+            }
+        },
+        "callOnLuas": {
+            "description": "Calls an event on all lua scripts.",
+            "argTypes": {
+                "?funcName": "string",
+                "?args": "{any}",
+                "ignoreStops": "boolean = false",
+                "ignoreSelf": "boolean = true",
+                "?exclusions": "{string}"
+            }
+        },
+        "callScript": {
+            "description": "Calls an event in one lua script.",
+            "argTypes": {
+                "?luaFile": "string",
+                "?funcName": "string",
+                "?args": "{any}"
+            }
+        },
+        "cameraFade": {
+            "description": "Fills the camera with solid color.",
+            "argTypes": {
+                "camera": "string",
+                "color": "string",
+                "duration": "number",
+                "forced": "boolean"
+            }
+        },
+        "cameraFlash": {
+            "description": "Flashes the camera with color.  \n`camera` - the camera to flash, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes for flash to fade out.  \n`forced` - whether to reset the flash and start over or skip if its still active.",
+            "argTypes": {
+                "camera": "string",
+                "color": "string",
+                "duration": "number",
+                "forced": "boolean"
+            }
+        },
         "getSongPosition": {
             "description": "Returns the current song position in milliseconds."
         },
