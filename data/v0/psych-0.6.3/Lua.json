@@ -1,141 +1,141 @@
 {
     "events": {
         "onCreate": {
-            "description": "Called once the script was initialized."
+            "desc": "Called once the script was initialized."
         },
         "onCreatePost": {
-            "description": "Called once the game has finished loading."
+            "desc": "Called once the game has finished loading."
         },
         "onDestroy": {
-            "description": "Called once the script is destroyed."
+            "desc": "Called once the script is destroyed."
         },
         "onBeatHit": {
-            "description": "Called every beat, use `curBeat` to get the current beat."
+            "desc": "Called every beat, use `curBeat` to get the current beat."
         },
         "onStepHit": {
-            "description": "Called every step, use `curStep` to get the current step."
+            "desc": "Called every step, use `curStep` to get the current step."
         },
         "onSectionHit": {
-            "description": "Called every section, use `curSection` to get the section index."
+            "desc": "Called every section, use `curSection` to get the section index."
         },
         "onUpdate": {
-            "description": "Called every frame before any logic updates.  \n`elapsed` - the time between frames in seconds.",
-            "argTypes": {
+            "desc": "Called every frame before any logic updates.  \n`elapsed` - the time between frames in seconds.",
+            "args": {
                 "elapsed": "number"
             }
         },
         "onUpdatePost": {
-            "description": "Called every frame after all logic updated.  \n`elapsed` - the time between frames in seconds.",
-            "argTypes": {
+            "desc": "Called every frame after all logic updated.  \n`elapsed` - the time between frames in seconds.",
+            "args": {
                 "elapsed": "number"
             }
         },
         "onUpdateScore": {
-            "description": "Triggered every time score text updates.",
-            "argTypes": {
+            "desc": "Triggered every time score text updates.",
+            "args": {
                 "missed": "boolean"
             }
         },
         "onSongStart": {
-            "description": "Triggered once the song starts playing."
+            "desc": "Triggered once the song starts playing."
         },
         "onEndSong": {
-            "description": "Triggered once the song ends."
+            "desc": "Triggered once the song ends."
         },
         "onMoveCamera": {
-            "description": "Called whenever camera tries to change focus.  \n`focus` - character it focuses on, can be either `boyfriend`, `dad` or `gf`.",
-            "argTypes": {
+            "desc": "Called whenever camera tries to change focus.  \n`focus` - character it focuses on, can be either `boyfriend`, `dad` or `gf`.",
+            "args": {
                 "focus": "string"
             }
         },
         "onRecalculateRating": {
-            "description": "Called right before the rating calculation.  \n`return Function_Stop` prevents it from being calculated."
+            "desc": "Called right before the rating calculation.  \n`return Function_Stop` prevents it from being calculated."
         },
         "onEvent": {
-            "description": "Fires every event hit.",
-            "argTypes": {
+            "desc": "Fires every event hit.",
+            "args": {
                 "eventName": "string",
                 "value1": "string",
                 "value2": "string"
             }
         },
         "onStartCountdown": {
-            "description": "Triggered before the countdown starts."
+            "desc": "Triggered before the countdown starts."
         },
         "onCountdownStarted": {
-            "description": "Triggered after the countdown started."
+            "desc": "Triggered after the countdown started."
         },
         "onCountdownTick": {
-            "description": "Fires every countdown tick.  \n`counter` - number value between 0 and 4.  \n` 0 ` - \"Three\". ` 1 ` - \"Two / Ready?\".  \n` 2 ` - \"One / Set\". ` 3 ` - \"Three / GO!\".  \n` 4 ` - Song started.",
-            "argTypes": {
+            "desc": "Fires every countdown tick.  \n`counter` - number value between 0 and 4.  \n` 0 ` - \"Three\". ` 1 ` - \"Two / Ready?\".  \n` 2 ` - \"One / Set\". ` 3 ` - \"Three / GO!\".  \n` 4 ` - Song started.",
+            "args": {
                 "counter": "number"
             }
         },
         "onNextDialogue": {
-            "description": "Triggered when the next dialogue is called.",
-            "argTypes": {
+            "desc": "Triggered when the next dialogue is called.",
+            "args": {
                 "dialogueCount": "number"
             }
         },
         "onSkipDialogue": {
-            "description": "Triggered when the dialogue is skipped mid text.",
-            "argTypes": {
+            "desc": "Triggered when the dialogue is skipped mid text.",
+            "args": {
                 "dialogueCount": "number"
             }
         },
         "onPause": {
-            "description": "Called when the gameplay pauses."
+            "desc": "Called when the gameplay pauses."
         },
         "onResume": {
-            "description": "Called when the gameplay resumes."
+            "desc": "Called when the gameplay resumes."
         },
         "onGameOver": {
-            "description": "Triggered before Game Over initialized.  \n`return Function_Stop` can be used to prevent it."
+            "desc": "Triggered before Game Over initialized.  \n`return Function_Stop` can be used to prevent it."
         },
         "onGameOverStart": {
-            "description": "Triggered after Game Over screen was created."
+            "desc": "Triggered after Game Over screen was created."
         },
         "onGameOverConfirm": {
-            "description": "Triggered if player decides to retry or return to the menu.",
-            "argTypes": {
+            "desc": "Triggered if player decides to retry or return to the menu.",
+            "args": {
                 "retry": "boolean"
             }
         },
         "onCustomSubstateCreate": {
-            "description": "Same as onCreate() but for substates.  \n`name` - the name that was given to the substate using `openCustomSubstate(name)`.",
-            "argTypes": {
+            "desc": "Same as onCreate() but for substates.  \n`name` - the name that was given to the substate using `openCustomSubstate(name)`.",
+            "args": {
                 "name": "string"
             }
         },
         "onCustomSubstateCreatePost": {
-            "description": "Same as onCustomSubstateCreate.",
-            "argTypes": {
+            "desc": "Same as onCustomSubstateCreate.",
+            "args": {
                 "name": "string"
             }
         },
         "onCustomSubstateUpdate": {
-            "description": "Same as onUpdate() but for substates.  \n`name` - the substate name.  \n`elapsed` - the time between frames in seconds.",
-            "argTypes": {
+            "desc": "Same as onUpdate() but for substates.  \n`name` - the substate name.  \n`elapsed` - the time between frames in seconds.",
+            "args": {
                 "name": "string",
                 "elapsed": "number"
             }
         },
         "onCustomSubstateUpdatePost": {
-            "description": "Same as onCustomSubstateUpdate.",
-            "argTypes": {
+            "desc": "Same as onCustomSubstateUpdate.",
+            "args": {
                 "name": "string",
                 "elapsed": "number"
             }
         },
         "onCustomSubstateDestroy": {
-            "description": "Triggered when substate closes.  \n`name` - the name of the substate that is being closed.",
-            "argTypes": {
+            "desc": "Triggered when substate closes.  \n`name` - the name of the substate that is being closed.",
+            "args": {
                 "name": "string"
             }
         },
         "goodNoteHit": {
-            "description": "Called when player hits a note.  \n`index` - the note's id in unspawnNotes group.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
-            "argTypes": {
+            "desc": "Called when player hits a note.  \n`index` - the note's id in unspawnNotes group.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
+            "args": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -143,8 +143,8 @@
             }
         },
         "opponentNoteHit": {
-            "description": "Called when opponent hits a note.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
-            "argTypes": {
+            "desc": "Called when opponent hits a note.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
+            "args": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -152,8 +152,8 @@
             }
         },
         "onSpawnNote": {
-            "description": "Called when a note is spawned.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
-            "argTypes": {
+            "desc": "Called when a note is spawned.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
+            "args": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -161,8 +161,8 @@
             }
         },
         "noteMiss": {
-            "description": "Called when player misses a note.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if it was a note's tail part.",
-            "argTypes": {
+            "desc": "Called when player misses a note.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if it was a note's tail part.",
+            "args": {
                 "index": "number",
                 "noteDir": "number",
                 "noteType": "string",
@@ -170,131 +170,131 @@
             }
         },
         "noteMissPress": {
-            "description": "Called when player misses by tapping while ghost tapping is off.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.",
-            "argTypes": {
+            "desc": "Called when player misses by tapping while ghost tapping is off.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.",
+            "args": {
                 "noteDir": "number"
             }
         },
         "onKeyPress": {
-            "description": "Called when player hits a key.  \n`key` - corresponds to the note's direction,  \n0: left, 1: down, 2: up, 3: right.",
-            "argTypes": {
+            "desc": "Called when player hits a key.  \n`key` - corresponds to the note's direction,  \n0: left, 1: down, 2: up, 3: right.",
+            "args": {
                 "key": "number"
             }
         },
         "onKeyRelease": {
-            "description": "Called when player releases a key.  \n`key` - corresponds to the note's direction,  \n0: left, 1: down, 2: up, 3: right.",
-            "argTypes": {
+            "desc": "Called when player releases a key.  \n`key` - corresponds to the note's direction,  \n0: left, 1: down, 2: up, 3: right.",
+            "args": {
                 "key": "number"
             }
         },
         "onGhostTap": {
-            "description": "Called when player ghost-taps a key.  \n`key` - corresponds to the note's direction,  \n0: left, 1: down, 2: up, 3: right.",
-            "argTypes": {
+            "desc": "Called when player ghost-taps a key.  \n`key` - corresponds to the note's direction,  \n0: left, 1: down, 2: up, 3: right.",
+            "args": {
                 "key": "number"
             }
         },
         "onTimerCompleted": {
-            "description": "Triggered on timer completion.  \n`tag` - the tag that was given to the timer.  \n`loops` - the amount of loops it have went through.  \n`loopsLeft` - the amount of loops left.",
-            "argTypes": {
+            "desc": "Triggered on timer completion.  \n`tag` - the tag that was given to the timer.  \n`loops` - the amount of loops it have went through.  \n`loopsLeft` - the amount of loops left.",
+            "args": {
                 "tag": "string",
                 "loops": "string",
                 "loopsLeft": "string"
             }
         },
         "onTweenCompleted": {
-            "description": "Triggered once any tween completes.  \n`tag` - the tag that was given to the tween.",
-            "argTypes": {
+            "desc": "Triggered once any tween completes.  \n`tag` - the tag that was given to the tween.",
+            "args": {
                 "tag": "string"
             }
         },
         "onSoundFinished": {
-            "description": "Triggered once any sound finishes.  \n`tag` - the tag that was given to the sound.",
-            "argTypes": {
+            "desc": "Triggered once any sound finishes.  \n`tag` - the tag that was given to the sound.",
+            "args": {
                 "tag": "string"
             }
         }
     },
     "variables": {
         "defaultPlayerStrumX0": {
-            "type": "number",
-            "description": "Default horizontal position of the player's left note."
+            "returns": "number",
+            "desc": "Default horizontal position of the player's left note."
         },
         "defaultPlayerStrumX1": {
-            "type": "number",
-            "description": "Default horizontal position of the player's down note."
+            "returns": "number",
+            "desc": "Default horizontal position of the player's down note."
         },
         "defaultPlayerStrumX2": {
-            "type": "number",
-            "description": "Default horizontal position of the player's up note."
+            "returns": "number",
+            "desc": "Default horizontal position of the player's up note."
         },
         "defaultPlayerStrumX3": {
-            "type": "number",
-            "description": "Default horizontal position of the player's right note."
+            "returns": "number",
+            "desc": "Default horizontal position of the player's right note."
         },
         "defaultPlayerStrumY0": {
-            "type": "number",
-            "description": "Default vertical position of the player's left note."
+            "returns": "number",
+            "desc": "Default vertical position of the player's left note."
         },
         "defaultPlayerStrumY1": {
-            "type": "number",
-            "description": "Default vertical position of the player's down note."
+            "returns": "number",
+            "desc": "Default vertical position of the player's down note."
         },
         "defaultPlayerStrumY2": {
-            "type": "number",
-            "description": "Default vertical position of the player's up note."
+            "returns": "number",
+            "desc": "Default vertical position of the player's up note."
         },
         "defaultPlayerStrumY3": {
-            "type": "number",
-            "description": "Default vertical position of the player's right note."
+            "returns": "number",
+            "desc": "Default vertical position of the player's right note."
         },
         "defaultOpponentStrumX0": {
-            "type": "number",
-            "description": "Default horizontal position of the opponent's left note."
+            "returns": "number",
+            "desc": "Default horizontal position of the opponent's left note."
         },
         "defaultOpponentStrumX1": {
-            "type": "number",
-            "description": "Default horizontal position of the opponent's down note."
+            "returns": "number",
+            "desc": "Default horizontal position of the opponent's down note."
         },
         "defaultOpponentStrumX2": {
-            "type": "number",
-            "description": "Default horizontal position of the opponent's up note."
+            "returns": "number",
+            "desc": "Default horizontal position of the opponent's up note."
         },
         "defaultOpponentStrumX3": {
-            "type": "number",
-            "description": "Default horizontal position of the opponent's right note."
+            "returns": "number",
+            "desc": "Default horizontal position of the opponent's right note."
         },
         "defaultOpponentStrumY0": {
-            "type": "number",
-            "description": "Default vertical position of the opponent's left note."
+            "returns": "number",
+            "desc": "Default vertical position of the opponent's left note."
         },
         "defaultOpponentStrumY1": {
-            "type": "number",
-            "description": "Default vertical position of the opponent's down note."
+            "returns": "number",
+            "desc": "Default vertical position of the opponent's down note."
         },
         "defaultOpponentStrumY2": {
-            "type": "number",
-            "description": "Default vertical position of the opponent's up note."
+            "returns": "number",
+            "desc": "Default vertical position of the opponent's up note."
         },
         "defaultOpponentStrumY3": {
-            "type": "number",
-            "description": "Default vertical position of the opponent's right note."
+            "returns": "number",
+            "desc": "Default vertical position of the opponent's right note."
         },
         "startedCountdown": {
-            "type": "number"
+            "returns": "boolean"
         },
         "songLength": {
-            "type": "number",
-            "description": "Song's length."
+            "returns": "number",
+            "desc": "Song's length."
         },
         "playbackRate": {
-            "type": "number",
-            "description": "The current playback speed of the song."
+            "returns": "number",
+            "desc": "The current playback speed of the song."
         }
     },
     "functions": {
         "addAnimation": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds an animation to the object using indexes.  \n`tag` - animated sprite to add animation to.  \n`name` - animation name.  \n`frames` - table of indexes for animation (ex: `{1, 2, 3, 4, 5}`).  \n`loop` - whether to loop the animation or not.",
+            "args": {
                 "tag": "string",
                 "name": "string",
                 "frames": "{number}",
@@ -303,8 +303,8 @@
             }
         },
         "addAnimationByIndices": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds an animation to the object using animation prefix and indexes.  \n`tag` - animated sprite to add animation to.  \n`name` - animation name.  \n`indices` - string of indices for animation (ex: `\"1, 2, 3, 4, 5\"`).  \n\nTo add looping animation instead, use `addAnimationByIndicesLoop` function.",
+            "args": {
                 "tag": "string",
                 "name": "string",
                 "prefix": "string",
@@ -313,8 +313,8 @@
             }
         },
         "addAnimationByIndicesLoop": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds a looped animation to the object using animation prefix and indexes.  \n`tag` - animated sprite to add animation to.  \n`name` - animation name.  \n`indices` - string of indices for animation (ex: `\"1, 2, 3, 4, 5\"`).  \n\nTo add non-looping animation instead, use `addAnimationByIndices` function.",
+            "args": {
                 "tag": "string",
                 "name": "string",
                 "prefix": "string",
@@ -323,8 +323,8 @@
             }
         },
         "addAnimationByPrefix": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds an animation to the object using animation prefix.  \n`tag` - animated sprite to add animation to.  \n`name` - animation name.  \n`prefix` - animation prefix in the `.xml` file. `loop` - whether to loop the animation or not.",
+            "args": {
                 "tag": "string",
                 "name": "string",
                 "prefix": "string",
@@ -333,60 +333,61 @@
             }
         },
         "addCharacterToList": {
-            "description": "",
-            "argTypes": {
+            "desc": "Preloads the character.  \n`name` - the name of the character's .json file.  \n`type` - type of the character, can be `dad` or `gf`, defaults to boyfriend.",
+            "args": {
                 "name": "string",
                 "type": "string"
             }
         },
         "addHaxeLibrary": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds haxe library to hscript (`runHaxeCode` function).  \n`libName` - name of the haxe library.  \n`libPackage` - path to the haxe package.",
+            "args": {
                 "libName": "string",
                 "?libPackage": "string = ''"
-            }
+            },
+            "example": "addHaxeLibrary('StringTools')  \naddHaxeLibrary('Lib', 'openfl')"
         },
         "addHealth": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds `value` to health.  \nKeep in mind that health ranges from 0 to 2, 1 being half of the health bar.",
+            "args": {
                 "value": "number"
             }
         },
         "addHits": {
-            "description": "Adds hits and recalculates the rating.",
-            "argTypes": {
+            "desc": "Adds hits and recalculates the rating.",
+            "args": {
                 "value": "string"
             }
         },
         "addLuaScript": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds a lua script to the execution queue.  \n`luaFile` - path to the lua file starting from the `mods/` folder.",
+            "args": {
                 "luaFile": "string",
                 "?ignoreAlreadyRunning": "boolean = false"
             }
         },
         "addLuaSprite": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds lua sprite to the scene.  \n`tag` - name of the sprite.  \n`front` - whether to add it in front of characters or behind.",
+            "args": {
                 "tag": "string",
                 "?front": "boolean = false"
             }
         },
         "addLuaText": {
-            "description": "",
-            "argTypes": {
+            "desc": "Adds text to the scene.  \n`tag` - name of the text object.",
+            "args": {
                 "tag": "string"
             }
         },
         "addMisses": {
-            "description": "Adds misses and recalculates the rating.",
-            "argTypes": {
+            "desc": "Adds misses and recalculates the rating.",
+            "args": {
                 "value": "number"
             }
         },
         "addOffset": {
-            "description": "Adds offset to the sprite's animation. `tag` - the sprite's name to add offset to.",
-            "argTypes": {
+            "desc": "Adds offset to the sprite's animation. `tag` - the sprite's name to add offset to.",
+            "args": {
                 "tag": "string",
                 "anim": "string",
                 "x": "number",
@@ -394,33 +395,36 @@
             }
         },
         "addScore": {
-            "description": "Adds score and recalculates the rating.",
-            "argTypes": {
+            "desc": "Adds score and recalculates the rating.",
+            "args": {
                 "value": "string"
             }
         },
         "anyGamepadJustPressed": {
-            "description": "Checks if the gamepad's button just got pressed.",
-            "argTypes": {
+            "desc": "Checks if the gamepad's button just got pressed.",
+            "args": {
                 "button": "string"
-            }
+            },
+            "returns": "boolean"
         },
         "anyGamepadPressed": {
-            "description": "Checks if the gamepad's button is held.",
-            "argTypes": {
+            "desc": "Checks if the gamepad's button is held.",
+            "args": {
                 "button": "string"
-            }
+            },
+            "returns": "boolean"
         },
         "anyGamepadReleased": {
-            "description": "Checks if the gamepad's button just got released.",
-            "argTypes": {
+            "desc": "Checks if the gamepad's button just got released.",
+            "args": {
                 "button": "string"
-            }
+            },
+            "returns": "boolean"
         },
         "callOnLuas": {
-            "description": "Calls an event on all lua scripts.",
-            "argTypes": {
-                "?funcName": "string",
+            "desc": "Calls an event in every lua script.",
+            "args": {
+                "funcName": "string",
                 "?args": "{any}",
                 "ignoreStops": "boolean = false",
                 "ignoreSelf": "boolean = true",
@@ -428,43 +432,282 @@
             }
         },
         "callScript": {
-            "description": "Calls an event in one lua script.",
-            "argTypes": {
-                "?luaFile": "string",
-                "?funcName": "string",
+            "desc": "Calls an event in a specified lua script.",
+            "args": {
+                "luaFile": "string",
+                "funcName": "string",
                 "?args": "{any}"
             }
         },
-        "cameraFade": {
-            "description": "Fills the camera with solid color.",
-            "argTypes": {
+        "cameraFlash": {
+            "desc": "Flashes the camera with the specified color.  \n`camera` - the camera to flash, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes for flash to fade out.  \n`forced` - whether to reset the flash and start over or skip if its still active.",
+            "args": {
                 "camera": "string",
                 "color": "string",
                 "duration": "number",
                 "forced": "boolean"
             }
         },
-        "cameraFlash": {
-            "description": "Flashes the camera with color.  \n`camera` - the camera to flash, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes for flash to fade out.  \n`forced` - whether to reset the flash and start over or skip if its still active.",
-            "argTypes": {
+        "cameraFade": {
+            "desc": "Fills the camera with the specified color.  \n`camera` - the camera to fill, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes to fade in.  \n`forced` - whether to reset the filling and start over or skip if its still active.",
+            "args": {
                 "camera": "string",
                 "color": "string",
                 "duration": "number",
                 "forced": "boolean"
             }
+        },
+        "cameraShake": {
+            "desc": "Shakes the camera.  \n`camera` - the camera to shake. Can be either `game`, `hud` or `other`.  \n`intensity` - how much the camera shakes.  \n`duration` - how much the shake should last.",
+            "args": {
+                "camera": "string",
+                "intensity": "number",
+                "duration": "number"
+            },
+            "example": "cameraShake('game', 0.005, 0.1)"
+        },
+        "cancelTimer": {
+            "desc": "Cancels the timer.  \n`tag` - name of the timer to cancel.",
+            "args": {
+                "tag": "string"
+            }
+        },
+        "cancelTween": {
+            "desc": "Cancels the tween.  \n`tag` - name of the tween to cancel.",
+            "args": {
+                "tag": "string"
+            }
+        },
+        "changePresence": {
+            "desc": "Changes Discord Presence.  \n**Requires some Discord RPC knowledge.**  \n**Do not overuse, otherwise you can get rate limited in Discord.**",
+            "args": {
+                "details": "string",
+                "?state": "string",
+                "?smallImageKey": "string",
+                "?hasStartTimestamp": "boolean",
+                "?endTimestamp": "number"
+            }
+        },
+        "characterDance": {
+            "desc": "Plays the character's idle animation.  \n`character` - can be either `dad` or `gf`, defaults to boyfriend.",
+            "args": {
+                "character": "string"
+            }
+        },
+        "checkFileExists": {
+            "desc": "Checks if the file or path exists.  \n`absolute` - whether to start from the root directory or the `mods/` folder.",
+            "args": {
+                "path": "string",
+                "?absolute": "boolean"
+            },
+            "returns": "boolean"
+        },
+        "close": {
+            "desc": "Turns off the script.",
+            "returns": "boolean"
+        },
+        "closeCustomSubstate": {
+            "desc": "Closes the current substate.",
+            "returns": "boolean"
+        },
+        "debugPrint": {
+            "desc": "Prints the text on the screen.  \nSupports up to 5 args.  \nBe aware that it combines all args into one, without adding space between them.",
+            "args": {
+                "text": "string"
+            }
+        },
+        "deleteFile": {
+            "desc": "Deletes file from the specified path.",
+            "args": {
+                "path": "string",
+                "ignoreMods": "string"
+            },
+            "returns": "boolean"
+        },
+        "directoryFileList": {
+            "desc": "Lists the files in the specified directory.",
+            "args": {
+                "path": "string"
+            },
+            "returns": "{string}"
+        },
+        "doTweenAlpha": {
+            "desc": "Tweens object's alpha.  \n`tag` - name of the tween.  \n`variable` - object to tween.",
+            "args": {
+                "tag": "string",
+                "variable": "string",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            },
+            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+        },
+        "doTweenAngle": {
+            "desc": "Tweens object's angle.  \n`tag` - name of the tween.  \n`variable` - object to tween.",
+            "args": {
+                "tag": "string",
+                "variable": "string",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            },
+            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+        },
+        "doTweenColor": {
+            "desc": "Tweens object's alpha.  \n`tag` - name of the tween.  \n`variable` - object to tween.  \n`color` - hex value, formatted as either `0xAARRGGBB` or `RRGGBB`.",
+            "args": {
+                "tag": "string",
+                "variable": "string",
+                "color": "string",
+                "duration": "number",
+                "easing": "string"
+            },
+            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+        },
+        "doTweenX": {
+            "desc": "Tweens object's X position.  \n`tag` - name of the tween.  \n`variable` - object to tween.",
+            "args": {
+                "tag": "string",
+                "variable": "string",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            },
+            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+        },
+        "doTweenY": {
+            "desc": "Tweens object's Y position.  \n`tag` - name of the tween.  \n`variable` - object to tween.",
+            "args": {
+                "tag": "string",
+                "variable": "string",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            },
+            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+        },
+        "doTweenZoom": {
+            "desc": "Tweens the camera zoom.  \n`tag` - name of the tween.  \n`camera` - camera to tween.",
+            "args": {
+                "tag": "string",
+                "camera": "string",
+                "newZoom": "number",
+                "duration": "number",
+                "easing": "string"
+            },
+            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+        },
+        "noteTweenX": {
+            "desc": "Tweens the strum's X position.  \n`tag` - name of the tween.  \n`note` - index of the strum to move.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.  \nDon't forget to use `defaultPlayerStrumX_` or `defaultOpponentStrumX_`, where `_` is the strum index.",
+            "args": {
+                "tag": "string",
+                "note": "number",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            }
+        },
+        "noteTweenY": {
+            "desc": "Tweens the strum's Y position.  \n`tag` - name of the tween.  \n`note` - index of the strum.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.  \nDon't forget to use `defaultPlayerStrumY_` or `defaultOpponentStrumY_`, where `_` is the strum index.",
+            "args": {
+                "tag": "string",
+                "note": "number",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            }
+        },
+        "noteTweenAngle": {
+            "desc": "Tweens the strum's angle.  \n`tag` - name of the tween.  \n`note` - index of the strum.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.",
+            "args": {
+                "tag": "string",
+                "note": "number",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            }
+        },
+        "noteTweenDirection": {
+            "desc": "Tweens the direction from which notes come from.  \n`tag` - name of the tween.  \n`note` - index of the strum.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.",
+            "args": {
+                "tag": "string",
+                "note": "number",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            }
+        },
+        "endSong": {
+            "desc": "Ends the song."
+        },
+        "exitSong": {
+            "desc": "Forces the player out of the song.",
+            "args": {
+                "?skipTransition": "boolean = false"
+            }
+        },
+        "restartSong": {
+            "desc": "Restarts the song.",
+            "args": {
+                "?skipTransition": "boolean = false"
+            }
+        },
+        "initSaveData": {
+            "desc": "Initializes (prepares) the save.",
+            "args": {
+                "name": "string",
+                "?folder": "string = 'psychenginemods'"
+            }
+        },
+        "flushSaveData": {
+            "desc": "Saves the save.  \n<sub>pun intended</sub>",
+            "args": {
+                "name": "string"
+            }
+        },
+        "getDataFromSave": {
+            "desc": "Gets data field from the save file.  \nDon't forget to use `initSaveData` before trying to do anything.",
+            "args": {
+                "name": "string",
+                "field": "string",
+                "backupValue": "any"
+            }
+        },
+        "setDataFromSave": {
+            "desc": "Sets data field in the save file.  \nUse `flushSaveData` to save fields.  \nDon't forget to use `initSaveData` before trying to do anything.",
+            "args": {
+                "name": "string",
+                "field": "string"
+            }
+        },
+        "gamepadAnalogX": {
+            "desc": "Gets the gamepad's stick X axis value.  \n`id` - gamepad's id.  \n`leftStick` - whether it's left stick or not.",
+            "args": {
+                "id": "number",
+                "?leftStick": "boolean = true"
+            },
+            "returns": "number"
+        },
+        "gamepadAnalogY": {
+            "desc": "Gets the gamepad's stick Y axis value.  \n`id` - gamepad's id.  \n`leftStick` - whether it's left stick or not.",
+            "args": {
+                "id": "number",
+                "?leftStick": "boolean = true"
+            },
+            "returns": "number"
         },
         "getSongPosition": {
-            "description": "Returns the current song position in milliseconds."
+            "desc": "Returns the current song position in milliseconds.",
+            "returns": "number"
         },
         "makeLuaSprite": {
-            "description": "Makes a sprite with the given tag, image and position.  \nIf sprite with that tag already exists, it gets replaced.  \n`image` - path to the image like `bg-stuff/goober`. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
-            "argTypes": {
+            "desc": "Makes a sprite with the given tag, image and position.  \nIf sprite with that tag already exists, it gets replaced.  \n`image` - path to the image like `bg-stuff/goober`. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
+            "args": {
                 "tag": "string",
                 "image": "string = ''",
                 "x": "number = 0",
                 "y": "number = 0"
             },
-            "returnValue": "nil",
             "example": "makeLuaSprite('newgrounds logo', 'newgrounds_logo', 459, 185)"
         }
     },
