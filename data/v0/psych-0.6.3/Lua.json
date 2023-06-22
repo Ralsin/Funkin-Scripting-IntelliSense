@@ -134,7 +134,7 @@
             }
         },
         "goodNoteHit": {
-            "desc": "Called when player hits a note.  \n`index` - the note's id in unspawnNotes group.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
+            "desc": "Called when player hits a note.  \n`index` - the note's id in unspawnNotes group.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if it's a note's tail part.",
             "args": {
                 "index": "number",
                 "noteDir": "number",
@@ -143,7 +143,7 @@
             }
         },
         "opponentNoteHit": {
-            "desc": "Called when opponent hits a note.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
+            "desc": "Called when opponent hits a note.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if it's a note's tail part.",
             "args": {
                 "index": "number",
                 "noteDir": "number",
@@ -152,7 +152,7 @@
             }
         },
         "onSpawnNote": {
-            "desc": "Called when a note is spawned.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if its a note's tail part.",
+            "desc": "Called when a note is spawned.  \n`index` - the note's id.  \n`noteDir` - 0: left, 1: down, 2: up, 3: right.  \n`noteType` - type of the custom note.  \n`isSustainNote` - true if it's a note's tail part.",
             "args": {
                 "index": "number",
                 "noteDir": "number",
@@ -440,7 +440,7 @@
             }
         },
         "cameraFlash": {
-            "desc": "Flashes the camera with the specified color.  \n`camera` - the camera to flash, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes for flash to fade out.  \n`forced` - whether to reset the flash and start over or skip if its still active.",
+            "desc": "Flashes the camera with the specified color.  \n`camera` - the camera to flash, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes for flash to fade out.  \n`forced` - whether to reset the flash and start over or skip if it's still active.",
             "args": {
                 "camera": "string",
                 "color": "string",
@@ -449,7 +449,7 @@
             }
         },
         "cameraFade": {
-            "desc": "Fills the camera with the specified color.  \n`camera` - the camera to fill, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes to fade in.  \n`forced` - whether to reset the filling and start over or skip if its still active.",
+            "desc": "Fills the camera with the specified color.  \n`camera` - the camera to fill, either `game`, `hud` or `other`.  \n`color` - the hex color value formatted as `0xAARRGGBB` or `RRGGBB`.  \n`duration` - the time it takes to fade in.  \n`forced` - whether to reset the filling and start over or skip if it's still active.",
             "args": {
                 "camera": "string",
                 "color": "string",

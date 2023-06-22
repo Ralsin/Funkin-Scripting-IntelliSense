@@ -1,4 +1,4 @@
-# FunkinLua Autocomplete (WORK IN PROGRESS)
+# Funkin' Scripting IntelliSense (WORK IN PROGRESS)
 Very silly VSCode extension that was made as a better alternative to the already existing "Funkin Script Autocomplete".  
 It's written completely from scratch, so any complains like "stolen" and "no credits" will be ignored since it's invalid.
 ## Features

@@ -1,0 +1,55 @@
+{
+  "name": "funkin-scripting-intellisense",
+  "displayName": "Funkin' Scripting IntelliSense",
+  "description": "IntelliSense for Friday Night Funkin' modding.",
+  "version": "0.1.0",
+  "publisher": "Ralsi",
+  "repository": "https://github.com/Ralsin/Funkin-Scripting-IntelliSense",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "FNF",
+    "Friday Night Funkin'",
+    "Autocomplete",
+    "Modding",
+    "Scripting"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Funkin' Scripting IntelliSense",
+      "properties": {
+        "funkin-scripting-intellisense.scriptingAutocompleteVersion": {
+          "type": "string",
+          "default": "psych-0.6.3",
+          "enum": [
+            "psych-0.6.3"
+          ],
+          "enumItemLabels": [
+            "Psych Engine 0.6.3"
+          ]
+        }
+      }
+    }
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.4",
+    "@types/vscode": "1.32"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.11"
+  }
+}
