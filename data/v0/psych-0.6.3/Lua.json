@@ -597,18 +597,510 @@
             },
             "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
         },
-        "noteTweenX": {
-            "desc": "Tweens the strum's X position.  \n`tag` - name of the tween.  \n`note` - index of the strum to move.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.  \nDon't forget to use `defaultPlayerStrumX_` or `defaultOpponentStrumX_`, where `_` is the strum index.",
+        "endSong": {
+            "desc": "Ends the song."
+        },
+        "exitSong": {
+            "desc": "Forces the player out of the song.",
             "args": {
-                "tag": "string",
-                "note": "number",
-                "value": "number",
-                "duration": "number",
-                "easing": "string"
+                "?skipTransition": "boolean = false"
             }
         },
-        "noteTweenY": {
-            "desc": "Tweens the strum's Y position.  \n`tag` - name of the tween.  \n`note` - index of the strum.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.  \nDon't forget to use `defaultPlayerStrumY_` or `defaultOpponentStrumY_`, where `_` is the strum index.",
+        "flushSaveData": {
+            "desc": "Saves the save.  \n<sub>pun intended</sub>",
+            "args": {
+                "name": "string"
+            }
+        },
+        "getDataFromSave": {
+            "desc": "Gets data field from the save file.  \nDon't forget to use `initSaveData` before trying to do anything.",
+            "args": {
+                "name": "string",
+                "field": "string",
+                "backupValue": "any"
+            }
+        },
+        "gamepadAnalogX": {
+            "desc": "Gets the gamepad's stick X axis value.  \n`id` - gamepad's id.  \n`leftStick` - whether it's left stick or not.",
+            "args": {
+                "id": "number",
+                "?leftStick": "boolean = true"
+            },
+            "returns": "number"
+        },
+        "gamepadAnalogY": {
+            "desc": "Gets the gamepad's stick Y axis value.  \n`id` - gamepad's id.  \n`leftStick` - whether it's left stick or not.",
+            "args": {
+                "id": "number",
+                "?leftStick": "boolean = true"
+            },
+            "returns": "number"
+        },
+        "gamepadJustPressed": {
+            "desc": "Tells if gamepad key just got pressed.  \n`id` - gamepad's id.  \n`key` - name of the key.",
+            "args": {
+                "id": "number",
+                "key": "string"
+            },
+            "returns": "boolean"
+        },
+        "gamepadPressed": {
+            "desc": "Tells if gamepad key is held at the moment.  \n`id` - gamepad's id.  \n`key` - name of the key.",
+            "args": {
+                "id": "number",
+                "key": "string"
+            },
+            "returns": "boolean"
+        },
+        "gamepadReleased": {
+            "desc": "Tells if gamepad key just got released.  \n`id` - gamepad's id.  \n`key` - name of the key.",
+            "args": {
+                "id": "number",
+                "key": "string"
+            },
+            "returns": "boolean"
+        },
+        "getCharacterX": {
+            "desc": "Returns the character's X position.  \n`type` - either `dad` or `gf`, defaults to boyfriend.",
+            "args": {
+                "type": "string"
+            },
+            "returns": "number"
+        },
+        "getCharacterY": {
+            "desc": "Returns the character's Y position.  \n`type` - either `dad` or `gf`, defaults to boyfriend.",
+            "args": {
+                "type": "string"
+            },
+            "returns": "number"
+        },
+        "getColorFromHex": {
+            "desc": "Returns the int color from hex value.",
+            "args": {
+                "color": "string"
+            },
+            "returns": "number"
+        },
+        "getGlobalFromScript": {
+            "desc": "Returns the value from another script.  \n`lua` - the lua file.  \n`value` - the global value in that lua file.",
+            "args": {
+                "lua": "string",
+                "value": "string"
+            },
+            "returns": "any"
+        },
+        "getGraphicMidpointX": {
+            "desc": "Returns the graphic X midpoint of the sprite.",
+            "args": {
+                "sprite": "string"
+            },
+            "returns": "number"
+        },
+        "getGraphicMidpointY": {
+            "desc": "Returns the graphic Y midpoint of the sprite.",
+            "args": {
+                "sprite": "string"
+            },
+            "returns": "number"
+        },
+        "getHealth": {
+            "desc": "Gets the current health (value from 0 to 2).",
+            "returns": "number"
+        },
+        "getHits": {
+            "desc": "Returns the current hits value on the song.",
+            "returns": "number"
+        },
+        "getMidpointX": {
+            "desc": "Returns the X midpoint of the sprite.",
+            "args": {
+                "sprite": "string"
+            },
+            "returns": "number"
+        },
+        "getMidpointY": {
+            "desc": "Returns the Y midpoint of the sprite.",
+            "args": {
+                "sprite": "string"
+            },
+            "returns": "number"
+        },
+        "getMisses": {
+            "desc": "Returns the current misses value on the song.",
+            "returns": "number"
+        },
+        "getMouseX": {
+            "desc": "Returns the X position of the mouse on the specified camera.  \n`camera` - either `game`, `hud` or `other`.",
+            "args": {
+                "camera": "string"
+            },
+            "returns": "number"
+        },
+        "getMouseY": {
+            "desc": "Returns the Y position of the mouse on the specified camera.  \n`camera` - either `game`, `hud` or `other`.",
+            "args": {
+                "camera": "string"
+            },
+            "returns": "number"
+        },
+        "getObjectOrder": {
+            "desc": "Returns the layer position of the object.  \nUse `dadGroup`, `gfGroup` and `boyfriendGroup` to get the order of dad, gf and bf respectively.",
+            "args": {
+                "obj": "string"
+            },
+            "returns": "number"
+        },
+        "getPixelColor": {
+            "desc": "Gets the pixel color as an int.",
+            "args": {
+                "obj": "string",
+                "x": "number",
+                "y": "number"
+            },
+            "returns": "number"
+        },
+        "getProperty": {
+            "desc": "Returns the game's or object's property.",
+            "args": {
+                "vars": "string"
+            },
+            "returns": "any"
+        },
+        "getPropertyFromClass": {
+            "desc": "Returns property of the class.",
+            "args": {
+                "class": "string",
+                "variable": "string"
+            },
+            "returns": "any"
+        },
+        "getPropertyFromGroup": {
+            "desc": "Returns the group's property.",
+            "args": {
+                "group": "string",
+                "index": "number",
+                "variable": "string"
+            },
+            "returns": "any"
+        },
+        "getRandomBool": {
+            "desc": "Returns random bool value.",
+            "args": {
+                "chance": "number = 50"
+            },
+            "returns": "boolean"
+        },
+        "getRandomFloat": {
+            "desc": "Returns random float value.  \n`exclude` - string of numbers separated by ` , `.",
+            "args": {
+                "min": "number",
+                "max": "number = 1",
+                "exclude": "string"
+            },
+            "returns": "number"
+        },
+        "getRandomInt": {
+            "desc": "Returns random int value.  \n`exclude` - string of numbers separated by ` , `.",
+            "args": {
+                "min": "number",
+                "max": "number = inf",
+                "exclude": "string"
+            },
+            "returns": "number"
+        },
+        "getRunningScripts": {
+            "desc": "Returns an array of all active script's directories.",
+            "returns": "{string}"
+        },
+        "getScore": {
+            "desc": "Gets the song's score in this game and returns it.",
+            "returns": "number"
+        },
+        "getScreenPositionX": {
+            "desc": "Returns the sprite's X position on the screen.",
+            "returns": "{string}"
+        },
+        "getScreenPositionY": {
+            "desc": "Returns the sprite's Y position on the screen.",
+            "returns": "{string}"
+        },
+        "getShaderBool": {
+            "desc": "Returns the object's shader bool.",
+            "args": {
+                "obj": "string",
+                "boolName": "string"
+            },
+            "returns": "boolean"
+        },
+        "getShaderBoolArray": {
+            "desc": "Returns the object's shader bool array.",
+            "args": {
+                "obj": "string",
+                "boolName": "string"
+            },
+            "returns": "{boolean}"
+        },
+        "getShaderFloat": {
+            "desc": "Returns the object's shader float.",
+            "args": {
+                "obj": "string",
+                "floatName": "string"
+            },
+            "returns": "number"
+        },
+        "getShaderFloatArray": {
+            "desc": "Returns the object's shader float array.",
+            "args": {
+                "obj": "string",
+                "floatName": "string"
+            },
+            "returns": "{number}"
+        },
+        "getShaderInt": {
+            "desc": "Returns the object's shader int.",
+            "args": {
+                "obj": "string",
+                "intName": "string"
+            },
+            "returns": "number"
+        },
+        "getShaderIntArray": {
+            "desc": "Returns the object's shader int array.",
+            "args": {
+                "obj": "string",
+                "intName": "string"
+            },
+            "returns": "{number}"
+        },
+        "getSongPosition": {
+            "desc": "Returns the current song position in milliseconds.",
+            "returns": "number"
+        },
+        "getSoundTime": {
+            "desc": "Returns the sound's time in milliseconds.",
+            "args": {
+                "obj": "string",
+                "intName": "string"
+            },
+            "returns": "{number}"
+        },
+        "getSoundVolume": {
+            "desc": "Returns the volume of the sound from 0 to 1.",
+            "args": {
+                "obj": "string",
+                "intName": "string"
+            },
+            "returns": "{number}"
+        },
+        "getTextFont": {
+            "desc": "Returns the text's font.",
+            "args": {
+                "obj": "string",
+                "intName": "string"
+            },
+            "returns": "{number}"
+        },
+        "getTextFromFile": {
+            "desc": "Returns text from file.",
+            "args": {
+                "path": "string",
+                "?ignoreModFolders": "boolean = false"
+            },
+            "returns": "string"
+        },
+        "getTextSize": {
+            "desc": "Returns the size of the text's string in pixels.",
+            "args": {
+                "obj": "string"
+            },
+            "returns": "number"
+        },
+        "getTextString": {
+            "desc": "Returns the text's string.",
+            "args": {
+                "obj": "string"
+            },
+            "returns": "string"
+        },
+        "getTextWidth": {
+            "desc": "Returns the text object's width.",
+            "args": {
+                "obj": "string"
+            },
+            "returns": "number"
+        },
+        "initLuaShader": {
+            "desc": "Initializes the shader to be ready to use.  \n`shader` - name of the shader's `.frag` file.",
+            "args": {
+                "shader": "string"
+            }
+        },
+        "initSaveData": {
+            "desc": "Initializes (prepares) the save.",
+            "args": {
+                "name": "string",
+                "?folder": "string = 'psychenginemods'"
+            }
+        },
+        "isRunning": {
+            "desc": "Checks if the specified lua script is active.",
+            "args": {
+                "luaFile": "string"
+            },
+            "returns": "number"
+        },
+        "keyJustPressed": {
+            "desc": "Tells if the keybind was just pressed.  \nCheckable keybinds:  \n`left`, `down`, `up`, `right`, `space`, `accept`, `back`, `pause`, `reset`.",
+            "args": {
+                "key": "string"
+            },
+            "returns": "boolean"
+        },
+        "keyPressed": {
+            "desc": "Tells if the keybind is held.  \nCheckable keybinds:  \n`left`, `down`, `up`, `right`, `space`, `accept`, `back`, `pause`, `reset`.",
+            "args": {
+                "lua": "string"
+            },
+            "returns": "boolean"
+        },
+        "keyReleased": {
+            "desc": "Tells if the keybind was just released.  \nCheckable keybinds:  \n`left`, `down`, `up`, `right`, `space`, `accept`, `back`, `pause`, `reset`.",
+            "args": {
+                "lua": "string"
+            },
+            "returns": "boolean"
+        },
+        "keyboardJustPressed": {
+            "desc": "Tells if the keyboard key was just pressed.  \nYou can get key names from [here](https://api.haxeflixel.com/flixel/input/keyboard/FlxKey.html).",
+            "args": {
+                "key": "string"
+            },
+            "returns": "boolean"
+        },
+        "keyboardPressed": {
+            "desc": "Tells if the keyboard key is held.  \nYou can get key names from [here](https://api.haxeflixel.com/flixel/input/keyboard/FlxKey.html).",
+            "args": {
+                "lua": "string"
+            },
+            "returns": "boolean"
+        },
+        "keyboardReleased": {
+            "desc": "Tells if the keyboard key was just released.  \nYou can get key names from [here](https://api.haxeflixel.com/flixel/input/keyboard/FlxKey.html).",
+            "args": {
+                "lua": "string"
+            },
+            "returns": "boolean"
+        },
+        "loadFrames": {
+            "desc": "Loads frames into sprite.  \n`spr` - sprite to load frames into.  \n`img` - path to the image.  \n`type` - type of the spritesheet. Spritesheet types:  \n`texture`, `textureatlas`, `tex`;  \n`texture_noaa`, `textureatlas_noaa`, `tex_noaa`;  \n`packer`, `packeratlas`, `pac`;  \nDefaults to `sparrow`.",
+            "args": {
+                "spr": "string",
+                "img": "string",
+                "type": "string = 'sparrow'"
+            }
+        },
+        "loadGraphic": {
+            "desc": "Loads image into sprite.  \n`spr` - sprite to load image into.  \n`img` - path to the image.  \n`width` and `height` - size of the frame grid. Don't set unless animated.",
+            "args": {
+                "spr": "string",
+                "img": "string",
+                "width": "number = 0",
+                "height": "number = 0"
+            }
+        },
+        "loadSong": {
+            "desc": "Tells the game to load into the song.  \n`name` - the song's name. Defaults to the current song.  \n`diffNum` - difficulty index. Defaults to -1 (current difficulty).",
+            "args": {
+                "?name": "string = nil",
+                "?diffNum": "number = -1"
+            }
+        },
+        "luaSoundExists": {
+            "desc": "Checks if any sound with the specified tag exists.",
+            "args": {
+                "tag": "string"
+            },
+            "returns": "boolean"
+        },
+        "luaSpriteExists": {
+            "desc": "Checks if any sprite with the specified tag exists.",
+            "args": {
+                "tag": "string"
+            },
+            "returns": "boolean"
+        },
+        "luaTextExists": {
+            "desc": "Checks if any text object with the specified tag exists.",
+            "args": {
+                "tag": "string"
+            },
+            "returns": "boolean"
+        },
+        "makeAnimatedLuaSprite": {
+            "desc": "Makes an animated sprite with the given tag, image and position.  \nIf sprite with that tag already exists, it gets replaced.  \n`image` - path to the image like `bg-stuff/goober`.  \n`type` - spritesheet data type:  \n`texture`, `textureatlas`, `tex`;  \n`texture_noaa`, `textureatlas_noaa`, `tex_noaa`;  \n`packer`, `packeratlas`, `pac`;  \nDefaults to `sparrow`.",
+            "args": {
+                "tag": "string",
+                "image": "string = ''",
+                "x": "number = 0",
+                "y": "number = 0",
+                "?type": "string = 'sparrow'"
+            },
+            "example": "makeLuaSprite('ng logo', 'newgrounds_logo', 459, 185)"
+        },
+        "makeGraphic": {
+            "desc": "Makes a graphic for the sprite.  \n`tag` - sprite's tag.  \n`width`, `height` - size of the rectangle.  \n`color` - hex color like `0xAARRGGBB` or `RRGGBB`.",
+            "args": {
+                "tag": "string",
+                "width": "number",
+                "height": "number",
+                "color": "string"
+            },
+            "example": "makeLuaSprite('ng logo', 'newgrounds_logo', 459, 185)"
+        },
+        "makeLuaSprite": {
+            "desc": "Makes a sprite with the given tag, image and position.  \nIf sprite with that tag already exists, it gets replaced.  \n`image` - path to the image like `bg-stuff/goober`. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
+            "args": {
+                "tag": "string",
+                "image": "string = ''",
+                "x": "number = 0",
+                "y": "number = 0"
+            },
+            "example": "makeLuaSprite('ng logo', 'newgrounds_logo', 459, 185)"
+        },
+        "makeLuaText": {
+            "desc": "Creates a label with the given tag, text and position.  \nIf text with that tag already exists, it gets replaced.  \n`width` - text field's width. Setting to 0 makes it dynamic but text cant be aligned.",
+            "args": {
+                "tag": "string",
+                "text": "string",
+                "width": "number",
+                "x": "number",
+                "y": "number"
+            },
+            "example": "makeLuaText('silly', 'Very silly text', 300, 24, screenHeight - 48)"
+        },
+        "mouseClicked": {
+            "desc": "Tells if mouse button just got pressed.  \n`btn` - `middle` or `right`, defaults to left.",
+            "args": {
+                "btn": "string"
+            },
+            "returns": "boolean"
+        },
+        "mousePressed": {
+            "desc": "Tells if mouse button is held at the moment.  \n`btn` - `middle` or `right`, defaults to left.",
+            "args": {
+                "btn": "string"
+            },
+            "returns": "boolean"
+        },
+        "mouseReleased": {
+            "desc": "Tells if mouse button just got released.  \n`btn` - `middle` or `right`, defaults to left.",
+            "args": {
+                "btn": "string"
+            },
+            "returns": "boolean"
+        },
+        "noteTweenAlpha": {
+            "desc": "Tweens the strum's alpha.  \n`tag` - name of the tween.  \n`note` - index of the strum.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.",
             "args": {
                 "tag": "string",
                 "note": "number",
@@ -637,14 +1129,124 @@
                 "easing": "string"
             }
         },
-        "endSong": {
-            "desc": "Ends the song."
-        },
-        "exitSong": {
-            "desc": "Forces the player out of the song.",
+        "noteTweenX": {
+            "desc": "Tweens the strum's X position.  \n`tag` - name of the tween.  \n`note` - index of the strum to move.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.  \nDon't forget to use `defaultPlayerStrumX_` or `defaultOpponentStrumX_`, where `_` is the strum index.",
             "args": {
-                "?skipTransition": "boolean = false"
+                "tag": "string",
+                "note": "number",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
             }
+        },
+        "noteTweenY": {
+            "desc": "Tweens the strum's Y position.  \n`tag` - name of the tween.  \n`note` - index of the strum.  \n0, 1, 2, 3 - opponent.  \n4, 5, 6, 7 - player.  \nDon't forget to use `defaultPlayerStrumY_` or `defaultOpponentStrumY_`, where `_` is the strum index.",
+            "args": {
+                "tag": "string",
+                "note": "number",
+                "value": "number",
+                "duration": "number",
+                "easing": "string"
+            }
+        },
+        "objectsOverlap": {
+            "desc": "Checks if two objects overlap.",
+            "args": {
+                "obj1": "string",
+                "obj2": "string"
+            }
+        },
+        "openCustomSubstate": {
+            "desc": "Opens a custom substate with the given name and calls onCustomSubstateCreate(name) function.",
+            "args": {
+                "name": "string",
+                "pause": "boolean = false"
+            }
+        },
+        "pauseSound": {
+            "desc": "Pauses the any sound with the specified tag.",
+            "args": {
+                "tag": "string"
+            }
+        },
+        "playAnim": {
+            "desc": "Plays animation on the sprite.  \n`obj` - name of the sprite object.  \n`name` - name of the animation.  \n`forced` - restarts the animation even if it already plays.  \n`reverse` - plays the animation frames in reverse order.  \n`startFrame` - the frame that animation is going to start from.",
+            "args": {
+                "obj": "string",
+                "name": "string",
+                "?forced": "boolean = false",
+                "?reverse": "boolean = false",
+                "?startFrame": "number = 0"
+            }
+        },
+        "playMusic": {
+            "desc": "Plays specified music from the `music/` folder.",
+            "args": {
+                "name": "string",
+                "?volume": "number = 1",
+                "?loop": "boolean = false"
+            }
+        },
+        "playSound": {
+            "desc": "Plays specified sound from the `sounds/` folder.  \n`tag` - name for the sound to use in functions like `pauseSound(tag)`.",
+            "args": {
+                "name": "string",
+                "?volume": "number = 1",
+                "?tag": "string"
+            }
+        },
+        "precacheImage": {
+            "desc": "Loads image into memory so game doesn't lag if it tries to load it for the first time.",
+            "args": {
+                "imgPath": "string"
+            }
+        },
+        "precacheMusic": {
+            "desc": "Loads music into memory so game doesn't lag if it tries to load it for the first time.",
+            "args": {
+                "musicPath": "string"
+            }
+        },
+        "precacheSound": {
+            "desc": "Loads sound into memory so game doesn't lag if it tries to load it for the first time.",
+            "args": {
+                "soundPath": "string"
+            }
+        },
+        "removeFromGroup": {
+            "desc": "Removes object from the group.  \n`dontDestroy` - keeps object alive in case it's referenced somewhere else.",
+            "args": {
+                "obj": "string",
+                "index": "number",
+                "dontDestroy": "boolean = false"
+            }
+        },
+        "removeLuaScript": {
+            "desc": "Removes lua script from execution thread.",
+            "args": {
+                "luaFile": "string"
+            }
+        },
+        "removeLuaSprite": {
+            "desc": "Removes sprite with the specified tag.  \n`destroy` - destroys the sprite so it can't be reused and cleans up taken memory.",
+            "args": {
+                "tag": "string",
+                "?destroy": "boolean = true"
+            }
+        },
+        "removeLuaText": {
+            "desc": "Removes text with the specified tag.",
+            "args": {
+                "tag": "string",
+                "?destroy": "boolean = true"
+            }
+        },
+        "removeSpriteShader": {
+            "desc": "Removes the shaders applied to the sprite.",
+            "args": {
+                "obj": "string"
+            },
+            "returns": "boolean"
         },
         "restartSong": {
             "desc": "Restarts the song.",
@@ -652,63 +1254,204 @@
                 "?skipTransition": "boolean = false"
             }
         },
-        "initSaveData": {
-            "desc": "Initializes (prepares) the save.",
+        "resumeSound": {
+            "desc": "Resumes the sound's playback.",
             "args": {
-                "name": "string",
-                "?folder": "string = 'psychenginemods'"
+                "tag": "string"
             }
         },
-        "flushSaveData": {
-            "desc": "Saves the save.  \n<sub>pun intended</sub>",
+        "runHaxeCode": {
+            "desc": "Executes haxe code string.  \nUse `[[double square brackets]]` for multiline text.  \n`return variableHere;` is useful to get the result.",
             "args": {
-                "name": "string"
+                "code": "string"
+            },
+            "returns": "any"
+        },
+        "runTimer": {
+            "desc": "Creates a timer with specified tag, time and loops.  \n`loops` - how many times the timer should run. 0 is infinite, defaults to 1.",
+            "args": {
+                "tag": "string",
+                "?time": "number = 1",
+                "?loops": "number = 1"
             }
         },
-        "getDataFromSave": {
-            "desc": "Gets data field from the save file.  \nDon't forget to use `initSaveData` before trying to do anything.",
+        "saveFile": {
+            "desc": "Saves `content` into file under `path`.  \n`absolute` - makes path start from the root directory of the operating system instead of the mods folder.",
             "args": {
-                "name": "string",
-                "field": "string",
-                "backupValue": "any"
+                "path": "string",
+                "content": "string",
+                "absolute": "boolean = false"
+            }
+        },
+        "scaleObject": {
+            "desc": "Sets the object's size multiplier (scales the object, duh).",
+            "args": {
+                "obj": "string",
+                "x": "number",
+                "y": "number",
+                "?updateHitbox": "boolean = true"
+            }
+        },
+        "screenCenter": {
+            "desc": "Centers the object to the screen.",
+            "args": {
+                "x": "number",
+                "y": "number"
+            }
+        },
+        "setBlendMode": {
+            "desc": "Sets the object's blend mode.  \nList of the blend modes:  ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``, ``.",
+            "args": {
+                "x": "number",
+                "y": "number"
+            }
+        },
+        "setCharacterX": {
+            "desc": "Sets the X position of the character's group.  \n`char` - either `dad` or `gf`, defaults to boyfriend.",
+            "args": {
+                "char": "string",
+                "x": "number"
+            }
+        },
+        "setCharacterY": {
+            "desc": "Sets the Y position of the character's group.  \n`char` - either `dad` or `gf`, defaults to boyfriend.",
+            "args": {
+                "char": "string",
+                "y": "number"
             }
         },
         "setDataFromSave": {
             "desc": "Sets data field in the save file.  \nUse `flushSaveData` to save fields.  \nDon't forget to use `initSaveData` before trying to do anything.",
             "args": {
                 "name": "string",
-                "field": "string"
+                "field": "string",
+                "value": "any"
             }
         },
-        "gamepadAnalogX": {
-            "desc": "Gets the gamepad's stick X axis value.  \n`id` - gamepad's id.  \n`leftStick` - whether it's left stick or not.",
+        "setGlobalFromScript": {
+            "desc": "Sets the value in another script.  \n`lua` - the lua file.  \n`field` - the global variable in that lua file.",
             "args": {
-                "id": "number",
-                "?leftStick": "boolean = true"
-            },
-            "returns": "number"
+                "lua": "string",
+                "field": "string",
+                "value": "any"
+            }
         },
-        "gamepadAnalogY": {
-            "desc": "Gets the gamepad's stick Y axis value.  \n`id` - gamepad's id.  \n`leftStick` - whether it's left stick or not.",
+        "setGraphicSize": {
+            "desc": "Sets the object's size in pixels.",
             "args": {
-                "id": "number",
-                "?leftStick": "boolean = true"
-            },
-            "returns": "number"
+                "obj": "string",
+                "width": "number",
+                "height": "number",
+                "?updateHitbox": "boolean = true"
+            }
         },
-        "getSongPosition": {
-            "desc": "Returns the current song position in milliseconds.",
-            "returns": "number"
-        },
-        "makeLuaSprite": {
-            "desc": "Makes a sprite with the given tag, image and position.  \nIf sprite with that tag already exists, it gets replaced.  \n`image` - path to the image like `bg-stuff/goober`. Leave empty and use **makeGraphic** function if you want to make a rectangle filled with solid color.",
+        "setHealth": {
+            "desc": "Sets the health.  \n`val` - value from 0 to 2.",
             "args": {
-                "tag": "string",
-                "image": "string = ''",
-                "x": "number = 0",
-                "y": "number = 0"
-            },
-            "example": "makeLuaSprite('newgrounds logo', 'newgrounds_logo', 459, 185)"
+                "val": "number = 0"
+            }
+        },
+        "setHealthBarColors": {
+            "desc": "Sets the HP Bar's colors.  \n `left` - hex color for the opponent.  \n`right` - hex color for the player.  \nHEX color format can be either `0xAARRGGBB` or `RRGGBB`.",
+            "args": {
+                "left": "string",
+                "right": "string"
+            }
+        },
+        "setHits": {
+            "desc": "Sets the hits counter to the new value and recalculates the rating.",
+            "args": {
+                "hits": "number"
+            }
+        },
+        "setMisses": {
+            "desc": "Sets the misses counter to the new value and recalculates the rating.",
+            "args": {
+                "misses": "number"
+            }
+        },
+        "setObjectCamera": {
+            "desc": "Moves object to the specified camera.  \n`camera` - either `game`, `hud` or `other`. Defaults to `game`.",
+            "args": {
+                "obj": "string",
+                "camera": "string = ''"
+            }
+        },
+        "setObjectOrder": {
+            "desc": "Sets the layer position of the object.  \nAlso check `getObjectOrder` function.",
+            "args": {
+                "obj": "string",
+                "pos": "number"
+            }
+        },
+        "setProperty": {
+            "desc": "Sets the game's property.",
+            "args": {
+                "var": "string",
+                "value": "any"
+            }
+        },
+        "setPropertyFromClass": {
+            "desc": "Sets the property of the class.",
+            "args": {
+                "class": "string",
+                "var": "string",
+                "value": "any"
+            }
+        },
+        "setPropertyFromGroup": {
+            "desc": "Sets the property of the class.",
+            "args": {
+                "group": "string",
+                "index": "number",
+                "var": "string",
+                "value": "any"
+            }
+        },
+        "setRatingFC": {
+            "desc": "Sets the FC text (Rating: Rating Name (Perc%) **FC Text**).",
+            "args": {
+                "text": "string"
+            }
+        },
+        "setRatingName": {
+            "desc": "Sets the rating text (Rating: **Rating Name** (Perc%) FC Text).",
+            "args": {
+                "text": "string"
+            }
+        },
+        "setRatingPercent": {
+            "desc": "Sets the accuracy value from 0 to 1 (Rating: Rating Name (**Perc%**) FC Text).",
+            "args": {
+                "val": "number"
+            }
+        },
+        "setScore": {
+            "desc": "Sets the score and recalculates the rating.",
+            "args": {
+                "score": "number"
+            }
+        },
+        "setScrollFactor": {
+            "desc": "Sets the object's scroll factor.  \n` 0 ` - stays in place, ` 1 ` - follows the camera.",
+            "args": {
+                "obj": "string",
+                "x": "number",
+                "y": "number"
+            }
+        },
+        "updateHitbox": {
+            "desc": "Updates the hitbox of the object.",
+            "args": {
+                "obj": "string"
+            }
+        },
+        "updateHitboxFromGroup": {
+            "desc": "Updates the hitbox of the object in the group.",
+            "args": {
+                "group": "string",
+                "index": "number"
+            }
         }
     },
     "snippets": {
