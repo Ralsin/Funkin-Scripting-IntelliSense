@@ -8,5 +8,3 @@ It's written completely from scratch, so any complains like "stolen" and "no cre
 ## Current docs
 - Psych Engine
   - 0.6.3 (WIP)
-## Planned:
-- hscript support (using `.hscript` files)
