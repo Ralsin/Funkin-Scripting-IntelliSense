@@ -550,8 +550,7 @@
                 "value": "number",
                 "duration": "number",
                 "easing": "string"
-            },
-            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+            }
         },
         "doTweenColor": {
             "desc": "Tweens object's alpha.  \n`tag` - name of the tween.  \n`variable` - object to tween.  \n`color` - hex value, formatted as either `0xAARRGGBB` or `RRGGBB`.",
@@ -561,8 +560,7 @@
                 "color": "string",
                 "duration": "number",
                 "easing": "string"
-            },
-            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+            }
         },
         "doTweenX": {
             "desc": "Tweens object's X position.  \n`tag` - name of the tween.  \n`variable` - object to tween.",
@@ -572,8 +570,7 @@
                 "value": "number",
                 "duration": "number",
                 "easing": "string"
-            },
-            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+            }
         },
         "doTweenY": {
             "desc": "Tweens object's Y position.  \n`tag` - name of the tween.  \n`variable` - object to tween.",
@@ -583,8 +580,7 @@
                 "value": "number",
                 "duration": "number",
                 "easing": "string"
-            },
-            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+            }
         },
         "doTweenZoom": {
             "desc": "Tweens the camera zoom.  \n`tag` - name of the tween.  \n`camera` - camera to tween.",
@@ -594,8 +590,7 @@
                 "newZoom": "number",
                 "duration": "number",
                 "easing": "string"
-            },
-            "example": "doTweenAlpha('bfAlpha', 'boyfriend', 0.5, 3, 'linear')"
+            }
         },
         "endSong": {
             "desc": "Ends the song."
